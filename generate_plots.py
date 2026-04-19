@@ -12,7 +12,6 @@ Usage
 # and timestamps arrays with the same parameters as in the notebook.
 # Use NumPy-style docstring with Parameters and Returns sections.
 
-import numpy as np
 
 
 def generate_data(seed):
