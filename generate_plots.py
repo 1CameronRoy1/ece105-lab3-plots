@@ -179,10 +179,12 @@ def main():
     """
     sensor_a, sensor_b, timestamps = generate_data(seed=1234)
 
-    fig, axes = plt.subplots(1, 3, figsize=(18, 5))
-    plot_scatter(sensor_a, sensor_b, timestamps, axes[0])
-    plot_histogram(sensor_a, sensor_b, axes[1])
-    plot_boxplot(sensor_a, sensor_b, axes[2])
+    fig, axes = plt.subplots(2, 2, figsize=(18, 10))
+    plot_scatter(sensor_a, sensor_b, timestamps, axes[0, 0])
+    plot_histogram(sensor_a, sensor_b, axes[0, 1])
+    plot_boxplot(sensor_a, sensor_b, axes[1, 0])
+    axes[1, 1].axis("off")  # Hide the unused subplot
+
 
     fig.tight_layout()
     fig.savefig("sensor_analysis.png", dpi=150, bbox_inches="tight")
